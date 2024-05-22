@@ -36,7 +36,7 @@ def playlist_model(url):
     
     Spotifyresult = pd.DataFrame()
     for i in range(len(track_ids_uni)):
-        if len(Spotifyresult) >= 10:
+        if Spotifyresult.shape[0] >= 10:
             break
         try:
             ff = sp.recommendations(seed_tracks=list(track_ids_uni[i:i+5]), limit=5)
