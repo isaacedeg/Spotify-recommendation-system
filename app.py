@@ -158,7 +158,6 @@ def home_page():
     
     model = col2.radio("Model",options=("Built-in Model","Spotify Model"), key='radio', on_change=update_radio0)
     if model == 'Spotify Model':
-        st.session_state.Region = st.session_state.rg
         
         radio=col.radio("Feature",options=("Playlist","Song","Artist Top Tracks"), key='radio2', on_change=update_radio2)
     

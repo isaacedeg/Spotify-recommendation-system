@@ -29,7 +29,7 @@ def playlist_model(url):
             st.error('Update the playlist URL as it seems incorrect.')
             return None
     
-    track_ids = get_IDs('Ruby', uri)
+    track_ids = get_IDs('Zico', uri)
     if track_ids == None:
         return None
     track_ids_uni = list(set(track_ids))
