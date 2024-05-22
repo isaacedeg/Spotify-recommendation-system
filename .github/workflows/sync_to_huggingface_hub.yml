@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://isaacedeg:$HF_TOKEN@huggingface.co/spaces/isaacedeg/Zico-Recommendation main
+        run: git push --force https://isaacedeg:$HF_TOKEN@huggingface.co/spaces/isaacedeg/Zico-Recommendation main
