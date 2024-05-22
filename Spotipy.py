@@ -2,13 +2,14 @@ import yaml
 import pandas as pd
 import streamlit as st
 import spotipy
+import os
 import spotipy.oauth2
 from spotipy.oauth2 import SpotifyClientCredentials
 
-stream= open("spotify.yaml")
-spotify_details = yaml.safe_load(stream)
-auth_manager = SpotifyClientCredentials(client_id=spotify_details['client_id'],
-                                        client_secret=spotify_details['client_secret'])
+api_key = os.getenv('SpotifyId')
+api_secret = os.getenv('SecretKey')
+auth_manager = SpotifyClientCredentials(client_id=api_key,
+                                        client_secret=api_secret)
 sp = spotipy.client.Spotify(auth_manager=auth_manager)
 
 def playlist_model(url):
