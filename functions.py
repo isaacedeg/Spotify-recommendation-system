@@ -317,3 +317,14 @@ def About_page():
     
     Information about features: [here](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features)
     """)
+def main():
+    spr_sidebar()        
+    if st.session_state.app_mode == 'Home':
+        home_page()
+    if st.session_state.app_mode == 'Result':
+        result_page()
+    if st.session_state.app_mode == 'About' :
+        About_page()
+# Run main()
+if __name__ == '__main__':
+    main()
