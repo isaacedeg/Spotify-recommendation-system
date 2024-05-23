@@ -6,10 +6,11 @@ import os
 import spotipy.oauth2
 from spotipy.oauth2 import SpotifyClientCredentials
 
-api_key = os.getenv('SpotifyId')
-api_secret = os.getenv('SecretKey')
-auth_manager = SpotifyClientCredentials(client_id=api_key,
-                                        client_secret=api_secret)
+file = open('spotify.yaml')
+credentials = yaml.safe_load(file)
+
+auth_manager = SpotifyClientCredentials(client_id=credentials['client_id'],
+                                        client_secret=credentials['client_secret'])
 sp = spotipy.client.Spotify(auth_manager=auth_manager)
 
 def playlist_model(url):
